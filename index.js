@@ -75,7 +75,9 @@ function getName(person) {
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
 function makeSmartPerson(name) {
-const obj = {name:name, sum:(x,y)=>(x+y),speak:s=> "Hello, my name is "+name};
+const obj = {name:name, 
+             sum:(x,y)=>(x+y),
+             speak: str => "Hello, my name is "+name};
 return obj;
 }
 
@@ -137,9 +139,9 @@ function get3rdCar(inventory) {
  * For example, if getCarInfoByIndex is invoked with the inventory and the number 0,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoByIndex(inventory, index) {
-  const car = inventory.find((item, ind) => {
-    return ind === index;
+function getCarInfoByIndex(inventory, ind) {
+  const car = inventory.find((item, index) => {
+    return index === ind;
   })
   return `This is a ${car.car_make} ${car.car_model}`
 }
@@ -181,7 +183,7 @@ function getCarInfoById(inventory, idIn) {
   return index === idIn-1;
   })
   return `The car is a ${theId.car_make} ${theId.car_model}`
-}
+}// end getCarInfoById(
 
 /**
  * ### Challenge `sortCarInventory`
@@ -201,9 +203,8 @@ function sortCarInventory(inventory) {
       return 1;
     }
     return 0;
-  }
-);
-}
+  }); //end sort function
+}//end sortCarInventory
 
 /**
  * ### Challenge `getModelYears`
@@ -264,7 +265,7 @@ function getGermanCars(inventory) {
   const resultArray = [];
   for (let i = 0; i < inventory.length; i++){
     let car = inventory[i];
-    if(car.car_make=== `Audi` || 
+    if(car.car_make === `Audi` || 
        car.car_make === `Mercedes-Benz` || 
        car.car_make === `Volkswagen`|| 
        car.car_make === `BMW`) { 
@@ -317,7 +318,8 @@ const argTimesTwo = num => num * 2;
 
 function carMaker(miles) {
   /* code here */
-  const mover = {odometer: miles, drive: distance => mover.odometer += distance}
+  const mover = {odometer: miles, 
+                 drive: distance => mover.odometer += distance}
   return mover;
 }
 
