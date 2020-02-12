@@ -216,9 +216,13 @@ function sortCarInventory(inventory) {
 */
 function getModelYears(inventory) {
   /* code here */
-  return inventory.map(car => car.car_year);
+  const resultArray = [];
+  for (let i = 0; i < inventory.length; i++){
+     resultArray.push(inventory[i].car_year)
+  }
+  return resultArray;
+// return inventory.map(car => car.car_year);
 }
-
 /**
  * ### Challenge `getOlderCars`
  * 
@@ -234,7 +238,14 @@ function getModelYears(inventory) {
 function getOlderCars(inventory, n) {
   /* code here */
   if (typeof inventory == "undefined")return [];
-  return inventory.filter(car => car.car_year <= n);
+  const resultArray = [];
+  for (let i = 0; i < inventory.length; i++){
+    if(inventory[i].car_year <= n){
+     resultArray.push(inventory[i])
+    }
+  }
+  return resultArray;
+//  return inventory.filter(car => car.car_year <= n);
 }
 
 /**
@@ -250,11 +261,23 @@ function getOlderCars(inventory, n) {
 */
 function getGermanCars(inventory) {
   /* code here */
-  return inventory.filter(car => car.car_make === `Audi` || 
-                                 car.car_make === `Mercedes-Benz` || 
-                                 car.car_make === `Volkswagen`|| 
-                                 car.car_make === `BMW`);
-      }
+  const resultArray = [];
+  for (let i = 0; i < inventory.length; i++){
+    let car = inventory[i];
+    if(car.car_make=== `Audi` || 
+       car.car_make === `Mercedes-Benz` || 
+       car.car_make === `Volkswagen`|| 
+       car.car_make === `BMW`) { 
+          resultArray.push(inventory[i])
+       }
+  }
+  return resultArray;
+}
+  // return inventory.filter(car => car.car_make === `Audi` || 
+  //                                car.car_make === `Mercedes-Benz` || 
+  //                                car.car_make === `Volkswagen`|| 
+  //                                car.car_make === `BMW`);
+  //     }
 
 /**
  * ### Challenge refactor to arrow functions
