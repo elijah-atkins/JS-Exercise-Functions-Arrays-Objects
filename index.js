@@ -233,7 +233,7 @@ function getModelYears(inventory) {
 */
 function getOlderCars(inventory, n) {
   /* code here */
-  if (inventory = undefined)return [];
+  if (typeof inventory == "undefined")return [];
   return inventory.filter(car => car.car_year <= n);
 }
 
@@ -248,9 +248,13 @@ function getOlderCars(inventory, n) {
  * made by either `Audi` or `Mercedes-Benz` or `Volkswagen` or `BMW`,
  * in the same order as they appear in the original inventory.
 */
-function getGermanCars(/* code here */) {
+function getGermanCars(inventory) {
   /* code here */
-}
+  return inventory.filter(car => car.car_make === `Audi` || 
+                                 car.car_make === `Mercedes-Benz` || 
+                                 car.car_make === `Volkswagen`|| 
+                                 car.car_make === `BMW`);
+      }
 
 /**
  * ### Challenge refactor to arrow functions
@@ -270,9 +274,9 @@ function getGermanCars(/* code here */) {
  *   return num * 2
  * }
 */
-const sum = null; // code here!
-const addFive = null; // code here!
-const argTimesTwo = null; // code here!
+const sum = (a,b) => a + b;
+const addFive = num => num + 5;
+const argTimesTwo = num => num * 2;
 
 /**
  * ### Challenge `carMaker`
