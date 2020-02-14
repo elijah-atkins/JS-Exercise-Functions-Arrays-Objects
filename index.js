@@ -179,7 +179,10 @@ function getCarInfoById(inventory, id) {
     }
   }
 }
-//   /* code here */
+
+// /* finding id this way only works for a list like this one */
+//function getCarInfoById(inventory, id) {
+//  
 //   const theId = inventory.find((item, index) => {
 //     return index === idIn - 1;
 //   });
@@ -320,7 +323,6 @@ const argTimesTwo = num => num * 2;
  */
 
 function carMaker(miles) {
-  /* code here */
   const car = {
     odometer: miles,
     drive: distance => (car.odometer += distance)
