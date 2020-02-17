@@ -114,7 +114,7 @@ var inventory = [
  **/
 function get3rdCar(inventory) {
   const the3rd = inventory.find((item, index) => {
-    return index === 2; // we use 2 because index is zero-based.
+    return index === 2; // we use 2 to find 3rd car because index is zero-based.
   });
   return `The car is a ${the3rd.car_make} ${the3rd.car_model}`;
 }
